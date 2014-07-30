@@ -2,6 +2,7 @@
   "name": "oauth-dropbox",
   "private": true,
   "dependencies": {
-    "polymer": "Polymer/polymer#master"
+    "polymer": "Polymer/polymer#master",
+    "core-localstorage": "Polymer/core-localstorage#master"
   }
 }

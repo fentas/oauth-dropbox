@@ -6,17 +6,9 @@ Copyright (c) 2014 muiis Authors. All rights reserved.
 <link rel="import" href="../polymer/polymer.html">
 <link rel="import" href="../core-localstorage/core-localstorage.html">
 
-<!--
-
-
--->
-
 <polymer-element name="oauth-dropbox" attributes="client code redirect">
   <template>
-
-    <link rel="stylesheet" href="oauth-dropbox.css">
-
-    <button on-click={{oauth}}>Login</button>
+    <content on-click="{{oauth}}"></content>
     <core-localstorage name="code" value="{{code}}"></core-localstorage>
   </template>
   <script>

@@ -6,9 +6,11 @@ Copyright (c) 2014 muiis Authors. All rights reserved.
 <link rel="import" href="../polymer/polymer.html">
 <link rel="import" href="../core-localstorage/core-localstorage.html">
 
-<polymer-element name="oauth-dropbox" attributes="client code redirect">
+<polymer-element name="oauth-dropbox" attributes="app-key code redirect">
   <template>
-    <content on-click="{{oauth}}"></content>
+    <link rel="stylesheet" href="../oauth-buttons/sign-in.css">
+    <link rel="stylesheet" href="../oauth-buttons/dropbox/sign-in.base64.css">
+    <content on-click="{{oauth}}" id="content"></content>
     <core-localstorage name="code" value="{{code}}"></core-localstorage>
   </template>
   <script>
@@ -76,9 +78,15 @@ Copyright (c) 2014 muiis Authors. All rights reserved.
         }
       },
 
+      domReady: function() {
+        if ( this.$.content.getDistributedNodes().length === 0 ) {
+          this.$.content.innerHTML = '<button class="sign-in dropbox">Sign in with <p>Dropbox</p></button>';
+        }
+      },
+
       oauth: function() {
         this.popup = window.open('https://www.dropbox.com/1/oauth2/authorize' +
-          '?client_id=' + this.client +
+          '?client_id=' + this['app-key'] +
           '&response_type=code' +
           '&redirect_uri=' +
             window.location.protocol + '//' +

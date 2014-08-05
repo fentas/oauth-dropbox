@@ -2,8 +2,14 @@
 # oauth-dropbox
 Polymer custom element.
 
+## Based on
+https://github.com/mui-is/o-auth
+
+## Usage
+Just put your app-key in `client` attribute.
+
 ## Current status
-Work in progress.
+Works for me.
 
 ## Donations
 Please help me to finance my every cup of tea. Every coin is appreciated.
